@@ -14,3 +14,16 @@ firebase.firestore().settings({
         merge: true,
       });
 const db = firebase.firestore()
+
+db.collection("turmaA").get() // o get é uma promisse que ira pegar e retonar um o
+                        .then((snapshot)=>{
+                            snapshot.forEach((doc)=>{
+                                let aluno = doc.data() ;
+                                console.log(aluno.nome)
+
+                          
+                            });
+                        }
+                        )
+
+
